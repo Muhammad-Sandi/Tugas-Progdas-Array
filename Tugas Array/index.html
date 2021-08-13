@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        //1. Method Objek Array: Array.join()
+        //Method Array .join() berfungsi untuk menggabungkan elemen array menjadi sebuah string. Sebuah argumen bisa diinputkan kedalam method ini yang akan berfungsi sebagai karakter ’pembatas’ untuk menyatukan array.
+        var arr1 = [1, 2, 3, 4, 5, "a", "b", "c", "d", "e"];
+        console.log(arr1.join("."));      // hasil: 1.2.3.4.5.a.b.c.d.e
+
+        //2. Method Objek Array: Array.reverse()
+        //Method Array.reverse() digunakan untuk membalikkan urutan dari elemen di dalam array. Method ini akan mengubah array asal.
+        var arr1 = [1, 2, 3, 4, 5, "a", "b", "c", "d", "e"];
+        console.log(arr1.toString());         // hasil: 1,2,3,4,5,a,b,c,d,e
+
+        arr1.reverse();
+        console.log(arr1.toString());         // hasil: e,d,c,b,a,5,4,3,2,1
+
+        //3. Method Objek Array: Array.sort()
+        //Method Array.sort() digunakan untuk mengurutkan elemen dari array. Jika method ini dipanggil tanpa argumen, elemen dari array akan diurutkan berdasarkan abjad. Jika elemen di dalam array bukan huruf, maka akan dikonversi sementara menjadi string, baru kemudian dilakukan proses pengurutan. Jika ditemukan elemen dengan nilai null atau undefined, akan di tempatkan pada urutan akhir.
+        var arr1 = ["Rendi", "Majiid", "Rafi", "Faiz", "Nova"];
+        arr1.sort();
+        console.log(arr1.toString());         // hasil: Rendi, Majiid, Rafi, Faiz, Nova
+
+        var arr2 = [3, 5, 2, 8, , , 1, 31, 22, 44, 33, 11];
+        arr2.sort();
+        console.log(arr2.toString());         // hasil: 1,11,2,22,3,31,33,44,5,8,,
+
+        //4. Method Objek Array: Array.slice()
+        //Method Array.slice() digunakan untuk ’memotong’ array menjadi array baru, atau menjadi ’sub-array’ dari array asal. Method slice() ini membutuhkan 2 buah argumen yang berisi posisi index awal dan akhir pemotongan.
+        var arr1 = [1, 2, 3, 4, "a", "b", "c", "d"];
+
+        //slice dari index ke 2 sampai 4
+        var arr2 = arr1.slice(2, 4)
+        console.log(arr2.toString());         // hasil: 3,4
+
+        //slice dari index ke 4 sampai akhir array
+        var arr3 = arr1.slice(4)
+        console.log(arr3.toString());         // hasil: a,b,c,d
+
+        //5. Method Objek Array: Array.concat()
+        //Method Array.concat() berfungsi untuk ”penyambungan” array. Hasil akhir dari pemanggilan fungsi ini adalah array baru dengan penambahan dari method concat(). Elemen yang ditambahkan diinput sebagai argumen dari method concat().
+        var arr1 = [1, 2, 3, 4, "a", "b", "c", "d"];
+        console.log(arr1.toString());         // hasil: 1,2,3,4,a,b,c,d
+
+        var arr2 = arr1.concat(11, 22, 33, 44);
+        console.log(arr2.toString());         // hasil: 1,2,3,4,a,b,c,d,11,22,33,44
+
+        //6. Method Objek Array: Array.splice()
+        //Method splice() adalah method ’serba-bisa’ yang bisa digunakan untuk memotong array, menambahkan elemen array, bahkan melakukan keduanya sekaligus.
+        var array1 = [1, 2, 3, 4, "a", "b", "c", "d"];
+        console.log(array1.toString(), "<br>")
+        // hasil: 1,2,3,4,a,b,c,d
+
+        //splice dari index ke 2
+        var array2 = array1.splice(2)
+        console.log(array1.toString(), "<br>")
+        // hasil: 1,2
+        console.log(array2.toString(), "<br>")
+        // hasil: 3,4,a,b,c,d
+
+        //7. Method Objek Array: Array.pop()
+        //Methode pop digunakan ketika kita ingin menghapus array pada elemen terakhir.
+        var kota = ['Bandung', 'Ciwaruga', 'Cimahi', 'Garut'];
+        kota.pop();
+        console.log(kota.toString(), "<br>");
+        // hasil Bandung,Ciwaruga,Cimahi
+
+        //8. Method Objek Array: Array.shift()
+        //Metode shift digunakan ketika akan menghapus elemen array pada bagian pertama.
+        var kota = ['Bandung', 'Ciwaruga', 'Cimahi', 'Garut'];
+        kota.shift();
+        console.log(kota.toString(), "<br>");
+        // hasil Ciwaruga,Cimahi,Garut
+
+        //9. Method Objek Array: Array.push()
+        //Merupakan fungsi yang digunakan untuk memasukkan value ke sebuah array dan disimpan di paling akhir / paling kanan
+        var kota = ['Bandung', 'Ciwaruga', 'Cimahi', 'Garut'];
+        kota.push("Depok");
+        console.log(kota.toString(), "<br>");
+        // hasil Bandung,Ciwaruga,Cimahi,Garut,Depok
+
+        //10. Objek Array: Array.unshift()
+        //Fungsi yang digunakan untuk memasukkan value ke sebuah array tetapi disimpan di paling awal / ujung kiri.
+        var kota = ['Bandung', 'Ciwaruga', 'Cimahi', 'Garut'];
+        kota.unshift("Depok");
+        document.write(kota.toString(), "<br>");
+        // hasil Depok,Bandung,Ciwaruga,Cimahi,Garut
+
+    </script>
 </body>
+
 </html>
